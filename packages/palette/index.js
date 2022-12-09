@@ -42,9 +42,10 @@ const windyRadixPalette = plugin.withOptions(
 			}
 
 			const themeColor = {};
-			for (const key of Object.keys(colorObj)) {
+			for (const [key, value] of Object.entriees(colorObj)) {
 				const scale = key.replace(colorName, "");
-				themeColor[scale] = `var(--${colorName}${scale})`;
+				// themeColor[scale] = `var(--${colorName}${scale})`;
+				themeColor[scale] = value;
 			}
 
 			themeColors[colorName] = themeColor;
